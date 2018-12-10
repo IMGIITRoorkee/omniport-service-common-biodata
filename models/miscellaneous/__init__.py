@@ -1,0 +1,1 @@
+from common_biodata.models.miscellaneous.interest import AbstractInterest
