@@ -1,9 +1,7 @@
 from django.db import models
 
-from kernel.models.root import Model
 
-
-class AbstractInterest(Model):
+class AbstractInterest(models.Model):
     """
     This model contains the interests of the faculty member
     """
