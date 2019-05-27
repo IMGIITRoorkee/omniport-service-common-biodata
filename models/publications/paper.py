@@ -1,7 +1,7 @@
 from django.db import models
 
 from common_biodata.models.publications import BasePublication
-from kernel.utils.upload_to import UploadTo
+from formula_one.utils.upload_to import UploadTo
 
 
 class AbstractPaper(BasePublication):
@@ -14,7 +14,7 @@ class AbstractPaper(BasePublication):
     )
 
     # Override this field in every child class!
-    file = models.FileField(
+    paper = models.FileField(
         upload_to=UploadTo('common_biodata', 'papers'),
         blank=True,
         null=True,

@@ -13,7 +13,7 @@ class AbstractEducation(models.Model):
         max_length=127,
     )
 
-    field_of_study = models.CharField(
+    field = models.CharField(
         max_length=127,
         blank=True,
         help_text='This can be a stream like Science or Commerce for school education',

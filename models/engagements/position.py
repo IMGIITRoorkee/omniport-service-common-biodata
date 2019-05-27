@@ -1,6 +1,6 @@
 from django.db import models
 
-from kernel.mixins.period_mixin import BlurryPeriodMixin
+from formula_one.mixins.period_mixin import BlurryPeriodMixin
 
 
 class AbstractPosition(BlurryPeriodMixin, models.Model):

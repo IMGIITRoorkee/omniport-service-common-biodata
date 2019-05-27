@@ -1,7 +1,7 @@
 from django.db import models
 
-from kernel.mixins.period_mixin import BlurryPeriodMixin
-from kernel.utils.upload_to import UploadTo
+from formula_one.mixins.period_mixin import BlurryPeriodMixin
+from formula_one.utils.upload_to import UploadTo
 
 
 class AbstractProject(BlurryPeriodMixin, models.Model):
