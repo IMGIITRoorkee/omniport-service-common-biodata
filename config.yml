@@ -1,0 +1,8 @@
+nomenclature:
+  name: common_biodata
+  verboseName: Common biodata
+description: Be informed and stay in the loop
+baseUrls:
+  http: common_biodata/
+  static: common_biodata/
+isApi: true
