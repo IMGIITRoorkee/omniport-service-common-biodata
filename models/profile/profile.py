@@ -16,6 +16,11 @@ class AbstractProfile(Model):
 
     description = models.TextField()
 
+    personal_website = models.CharField(
+        max_length=255,
+        blank=True,
+    )
+
     class Meta:
         """
         Meta class for AbstractProfile
