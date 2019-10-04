@@ -2,6 +2,7 @@ from django.db import models
 
 from kernel.constants import graduations
 
+
 class AbstractEducation(models.Model):
     """
     This model contains information about one bit of education
@@ -47,5 +48,3 @@ class AbstractEducation(models.Model):
         institute = self.institute
         year = self.year
         return f'{graduation} ({degree}) from {institute} in {year}'
-    
-
