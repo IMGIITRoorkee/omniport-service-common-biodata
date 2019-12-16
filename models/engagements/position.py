@@ -16,7 +16,9 @@ class AbstractPosition(BlurryPeriodMixin, models.Model):
         max_length=127,
     )
 
-    description = models.TextField()
+    description = models.TextField(
+        blank=True,
+    )
 
     class Meta:
         """

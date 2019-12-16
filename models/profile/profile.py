@@ -11,6 +11,8 @@ class AbstractProfile(Model):
     handle = models.SlugField(
         max_length=31,
         blank=True,
+        null=True,
+        default=None,
         unique=True,
     )
 
