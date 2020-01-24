@@ -1,6 +1,6 @@
 from django.db import models
 
-from kernel.constants import graduations
+from common_biodata.constants import graduations
 
 
 class AbstractEducation(models.Model):
