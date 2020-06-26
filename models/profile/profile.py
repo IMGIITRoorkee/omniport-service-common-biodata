@@ -18,7 +18,7 @@ class AbstractProfile(Model):
 
     description = models.TextField()
 
-    personal_website = models.CharField(
+    personal_website = models.URLField(
         max_length=255,
         blank=True,
     )
