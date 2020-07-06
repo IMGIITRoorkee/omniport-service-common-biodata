@@ -22,9 +22,9 @@ class BasePublication(models.Model):
 
     year = models.IntegerField()
 
-    pages = models.CharField(
-        max_length=31,
+    pages = models.PositiveIntegerField(
         blank=True,
+        null=True,
     )
 
     volumes = models.CharField(
