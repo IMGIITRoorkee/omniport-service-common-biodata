@@ -1,6 +1,7 @@
 from django.db import models
 
 from formula_one.models.base import Model
+from common_biodata.utils.updated_URLValidator import UpdatedURLValidator
 
 
 class AbstractProfile(Model):
@@ -18,9 +19,10 @@ class AbstractProfile(Model):
 
     description = models.TextField()
 
-    personal_website = models.URLField(
+    personal_website = models.CharField(
         max_length=255,
         blank=True,
+        validators=[UpdatedURLValidator()],
     )
 
     class Meta:
