@@ -21,3 +21,15 @@ class UpdatedURLValidator(URLValidator):
         r'(?::\d{2,5})?'  # port
         r'(?:[/?#][^\s]*)?'  # resource path
         r'\Z', re.IGNORECASE)
+    
+
+class SemicolonSeparatedURLValidator:
+    def __init__(self):
+        self.single_url_validator = UpdatedURLValidator()
+
+    def __call__(self, value):
+        if not value:
+            return
+        urls = [url.strip() for url in value.split(";") if url.strip()]
+        for url in urls:
+            self.single_url_validator(url)
