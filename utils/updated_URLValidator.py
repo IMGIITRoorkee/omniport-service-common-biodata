@@ -1,5 +1,6 @@
 import re
 from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 
 
 class UpdatedURLValidator(URLValidator):
@@ -33,3 +34,25 @@ class SemicolonSeparatedURLValidator:
         urls = [url.strip() for url in value.split(";") if url.strip()]
         for url in urls:
             self.single_url_validator(url)
+
+class CommaSeparatedURLValidator:
+    """
+    Validates a comma-separated list of URLs using UpdatedURLValidator.
+    """
+
+    def __init__(self):
+        self.single_url_validator = UpdatedURLValidator()
+
+    def __call__(self, value):
+        if not value:
+            return
+        urls = [url.strip() for url in value.split(",") if url.strip()]
+        errors = []
+        for url in urls:
+            try:
+                self.single_url_validator(url)
+            except ValidationError as e:
+                errors.append(f"'{url}': {e.messages[0]}")
+
+        if errors:
+            raise ValidationError("Invalid URL(s): " + "; ".join(errors))

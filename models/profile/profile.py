@@ -2,7 +2,7 @@ from django.db import models
 
 from formula_one.models.base import Model
 # from common_biodata.utils.updated_URLValidator import UpdatedURLValidator
-from common_biodata.utils.updated_URLValidator import SemicolonSeparatedURLValidator
+from common_biodata.utils.updated_URLValidator import CommaSeparatedURLValidator 
 
 
 class AbstractProfile(Model):
@@ -23,7 +23,7 @@ class AbstractProfile(Model):
     personal_website = models.CharField(
         max_length=255,
         blank=True,
-        validators=[SemicolonSeparatedURLValidator()],
+        validators=[CommaSeparatedURLValidator()],
     )
 
 
